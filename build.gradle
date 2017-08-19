@@ -46,7 +46,6 @@ sourceCompatibility = '1.8'
 
 kaytee {
     baseVersion = "0.10.0.0"
-    generateChangeLog=false
 
     unitTest{
         enabled = false
