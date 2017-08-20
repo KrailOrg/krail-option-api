@@ -45,12 +45,13 @@ sourceCompatibility = '1.8'
 
 
 kaytee {
-    baseVersion = "0.10.0.0"
+    baseVersion = "0.13.0.0"
 
     unitTest{
         enabled = false
     }
 }
+
 
 bintray {
     user = 'dsowerby'
@@ -58,8 +59,7 @@ bintray {
 
 dependencies {
 
-    compile 'uk.q3c.krail:krail-i18n-api:0.9.0.0.429340b'
-    compile 'uk.q3c.krail:krail-persist-api:0.9.1.0.c73264e'
+    compile 'uk.q3c.krail:krail-i18n-api:0.14.1.0.7a04e97'
 
 
 }
