@@ -24,7 +24,7 @@ import uk.q3c.krail.persist.PersistenceInfo;
  * @param <M> the implementation object, returned for fluency
  *            Created by David Sowerby on 25/06/15.
  */
-public interface OptionPersistenceEnabler<M> extends PersistenceInfo<I18NKey, M> {
+public interface OptionPersistenceEnabler<M> extends PersistenceInfo<I18NKey, OptionPersistenceInfo> {
 
     /**
      * Binds {@link OptionDaoDelegate} to an implementation, uniquely annotated for that implementation

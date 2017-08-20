@@ -13,13 +13,15 @@
 
 package uk.q3c.krail.option.persist;
 
+import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.TypeLiteral;
+import com.google.inject.multibindings.MapBinder;
 
 import java.lang.annotation.Annotation;
 
 /**
- * Utility class to help with some of the binding mechanics for handling  {@link OptionDaoDelegate}
+ * Utility class to help with some of the binding mechanics for handling  {@link OptionDaoDelegate} and {@link OptionPersistenceInfo}
  * <p>
  * Created by David Sowerby on 26/06/15.
  */
@@ -27,10 +29,16 @@ public class OptionPersistenceHelper {
 
     public static final String PROVIDE_OPTION_DAO = "ProvideOptionDao";
 
-    private static TypeLiteral<Class<? extends Annotation>> annotationClassLiteral = new TypeLiteral<Class<? extends Annotation>>() {
+    public static TypeLiteral<Class<? extends Annotation>> annotationClassLiteral = new TypeLiteral<Class<? extends Annotation>>() {
     };
-    private static TypeLiteral<Provider<OptionDaoDelegate>> optionTypeLiteral = new TypeLiteral<Provider<OptionDaoDelegate>>() {
+    public static TypeLiteral<Provider<OptionDaoDelegate>> optionTypeLiteral = new TypeLiteral<Provider<OptionDaoDelegate>>() {
     };
+    public static TypeLiteral<OptionPersistenceInfo> persistenceInfoClassLiteral = new TypeLiteral<OptionPersistenceInfo>() {
+    };
+
+    public static MapBinder<Class<? extends Annotation>, OptionPersistenceInfo> optionDaoProviders(Binder binder) {
+        return MapBinder.newMapBinder(binder, annotationClassLiteral, persistenceInfoClassLiteral);
+    }
 
 
     public static TypeLiteral<Class<? extends Annotation>> annotationClassLiteral() {
