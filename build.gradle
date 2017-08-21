@@ -42,10 +42,10 @@ repositories {
 
 
 sourceCompatibility = '1.8'
-
+ext.assertjVersion = '3.8.0'
 
 kaytee {
-    baseVersion = "0.13.0.0"
+    baseVersion = "0.14.0.0"
 
     unitTest{
         enabled = false
@@ -59,9 +59,12 @@ bintray {
 
 dependencies {
 
-    compile 'uk.q3c.krail:krail-i18n-api:0.14.1.0.7a04e97'
+    compile 'uk.q3c.krail:krail-i18n-api:0.15.0.0.dd44441'
 
-
+    testCompile 'org.assertj:assertj-core:' + assertjVersion
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'org.mockito:mockito-all:1.10.19'
 }
 
 idea {
