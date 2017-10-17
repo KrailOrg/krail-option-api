@@ -14,7 +14,6 @@ buildscript {
     ext.kaytee_plugin_version = "0.18.10.0"
     repositories {
         jcenter()
-        mavenLocal()
     }
 
     dependencies {
@@ -31,7 +30,6 @@ group = 'uk.q3c.krail'
 apply plugin: 'uk.q3c.kaytee'
 
 repositories {
-    mavenLocal()
     jcenter()
     mavenCentral()
 
@@ -42,9 +40,11 @@ sourceCompatibility = '1.8'
 ext.assertjVersion = '3.8.0'
 
 kaytee {
-    baseVersion = "0.14.0.0"
+    version {
+        number = "0.14.1.0"
+    }
 
-    unitTest{
+    unitTest {
         enabled = false
     }
 }
