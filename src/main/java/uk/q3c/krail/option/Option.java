@@ -75,6 +75,8 @@ public interface Option {
 
     /**
      * Calls {@link #set(OptionKey, int, Object)}  with a hierarchy rank of 0 (the highest rank)
+     *
+     * An {@link OptionChangeMessage} is sent via the global event bus
      */
     <T> void set(OptionKey<T> optionKey, T value);
 
@@ -82,6 +84,8 @@ public interface Option {
     /**
      * Sets the value for a composite key comprising the {@code context}, {@code key} & {@code qualifiers},
      * for the current user, in the hierarchy supported by this instance, at {@code hierarchyRank}.
+     *
+     * An {@link OptionChangeMessage} is sent via the global event bus
      *
      * @param value         the value to be stored.  This can be of any type supported by the implementation. That is usually
      *                      determined by the underlying persistence layer.
@@ -96,6 +100,8 @@ public interface Option {
 
     /**
      * Deletes the value assigned to {@code optionKey} for the current user, in the hierarchy supported by this instance, at {@code hierarchyRank}.
+     *
+     * An {@link OptionChangeMessage} is sent via the global event bus
      *
      * @param hierarchyRank the hierarchy rank to delete the value assignment from
      * @param optionKey     identifier for the option, in its context

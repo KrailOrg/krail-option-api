@@ -18,10 +18,8 @@ package uk.q3c.krail.option;
  * using an option, and forms part of a key to define that option
  * <p>
  *
- * @param <E> the type of event the will be passed when {@link #optionValueChanged} is called
- *            Created by David Sowerby on 01/12/14.
  */
-public interface OptionContext<E> {
+public interface OptionContext {
 
     /**
      * Returns the {@link Option} instance being used by this context
@@ -29,13 +27,6 @@ public interface OptionContext<E> {
      * @return the {@link Option} instance being used by this context
      */
     Option optionInstance();
-
-    /**
-     * Called when an option value is changed in response to a property change - usually a Field which has been modified by the user
-     *
-     * @param event the event representing the change
-     */
-    void optionValueChanged(E event);
 
 
 }

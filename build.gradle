@@ -41,7 +41,7 @@ ext.assertjVersion = '3.8.0'
 
 kaytee {
     version {
-        number = "0.14.1.0"
+        number = "0.15.0.0"
     }
 
     unitTest {

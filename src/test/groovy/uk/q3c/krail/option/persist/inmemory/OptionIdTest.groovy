@@ -16,9 +16,9 @@ package uk.q3c.krail.option.persist.inmemory
 import spock.lang.Specification
 import uk.q3c.krail.i18n.I18NKey
 import uk.q3c.krail.option.*
+import uk.q3c.krail.option.mock.MockOptionContext
 import uk.q3c.krail.option.persist.OptionCacheKey
 import uk.q3c.krail.option.persist.OptionId
-import uk.q3c.krail.option.test.MockOptionContext
 
 /**
  * Created by David Sowerby on 21 Jan 2016
@@ -40,10 +40,7 @@ class OptionIdTest extends Specification {
             return null
         }
 
-        @Override
-        void optionValueChanged(Object event) {
 
-        }
     }
 
 

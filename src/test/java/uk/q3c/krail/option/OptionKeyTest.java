@@ -15,9 +15,9 @@ package uk.q3c.krail.option;
 
 import org.junit.Test;
 import uk.q3c.krail.i18n.I18NKey;
-import uk.q3c.krail.option.test.MockOptionContext;
+import uk.q3c.krail.option.mock.MockOptionContext;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OptionKeyTest {
 
