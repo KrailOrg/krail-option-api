@@ -41,7 +41,7 @@ ext.assertjVersion = '3.8.0'
 
 kaytee {
     version {
-        number = "0.15.1.0"
+        number = "0.16.0.0"
     }
 
     unitTest {
@@ -60,7 +60,7 @@ dependencies {
 
     testCompile 'org.assertj:assertj-core:' + assertjVersion
     testCompile 'junit:junit:4.12'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
     testCompile 'org.mockito:mockito-all:1.10.19'
 }
 
