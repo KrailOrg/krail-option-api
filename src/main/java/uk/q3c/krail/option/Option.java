@@ -13,6 +13,10 @@
 
 package uk.q3c.krail.option;
 
+import uk.q3c.krail.option.persist.OptionCache;
+
+import java.util.Optional;
+
 /**
  * Implementations represent an Option which can be at any rank in a {@link UserHierarchy}.  All calls reference an
  * implementation of {@link UserHierarchy} held by the implementation.
@@ -109,5 +113,20 @@ public interface Option {
      */
     <T> T delete(OptionKey<T> optionKey, int hierarchyRank);
 
+
+    //======================================= cache ====================================================================
+
+    /**
+     * Returns the cache being used by this Option instance
+     *
+     * @return the cache being used by this Option instance
+     */
+    OptionCache cache();
+
+    /**
+     * Gets a value only if it is already present in the cache.  The cache loader is not called,  Returns Optional.isEmpty()
+     * if there is no matching cache entry
+     */
+    <T> Optional<T> getValueFromCache(OptionKey<T> key, int hierarchyRank);
 
 }

@@ -15,10 +15,10 @@ package uk.q3c.krail.option.persist;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheStats;
-import com.google.common.cache.LoadingCache;
 import uk.q3c.krail.option.Option;
 
 import java.util.Optional;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * A cache for use with {@link Option}.  Implementations should be thread safe
@@ -26,8 +26,6 @@ import java.util.Optional;
  * Created by David Sowerby on 19/02/15.
  */
 public interface OptionCache {
-
-    LoadingCache<OptionCacheKey, Optional<?>> getCache();
 
     /**
      * Passes the call to the underlying persistence, and if that is successful, writes the entry to the cache
@@ -68,7 +66,7 @@ public interface OptionCache {
      * with a value if it is not present)
      *
      * @param optionCacheKey unique identifier
-     * @return Returns a value from the cache only if it is present in the cache, otherwise null
+     * @return Returns a value from the cache only if it is present in the cache, otherwise Optional.empty()
      */
     Optional<?> getIfPresent(OptionCacheKey<?> optionCacheKey);
 
@@ -76,7 +74,7 @@ public interface OptionCache {
 
     /**
      * Invalidates all entries in the cache see {@link Cache#invalidateAll()}.  If you want the results to be immediate you may need to follow this with {@link
-     * #cleanup}
+     * #cleanup} - or just use {@link #clear()}, which calls both
      */
     void flush();
 
@@ -91,4 +89,12 @@ public interface OptionCache {
      * {@link #flush()} followed by {@link #cleanup()}
      */
     void clear();
+
+    /**
+     * Returns the contents of the cache represented as a Map.  No cache loading is done in response to this call, and
+     * therefore just represents the content of the cache at the time of the call
+     *
+     * @return the contents of the cache represented as a Map.
+     */
+    ConcurrentMap<OptionCacheKey, Optional<?>> asMap();
 }
