@@ -15,6 +15,7 @@ package uk.q3c.krail.option.persist;
 
 import uk.q3c.krail.persist.PersistenceInfo;
 
+import java.io.Serializable;
 import java.lang.annotation.Annotation;
 
 /**
@@ -22,7 +23,7 @@ import java.lang.annotation.Annotation;
  * <p>
  * Created by David Sowerby on 26/06/15.
  */
-public interface OptionSource {
+public interface OptionSource extends Serializable {
 
     OptionDaoDelegate getActiveDao();
 

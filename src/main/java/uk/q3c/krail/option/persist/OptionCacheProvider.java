@@ -15,12 +15,15 @@ package uk.q3c.krail.option.persist;
 
 import com.google.common.cache.LoadingCache;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 /**
  * Created by David Sowerby on 22/02/15.
  */
-public interface OptionCacheProvider {
+public interface OptionCacheProvider extends Serializable {
 
     LoadingCache<OptionCacheKey, Optional<?>> get();
 }
+
+

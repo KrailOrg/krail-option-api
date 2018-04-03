@@ -17,6 +17,7 @@ import uk.q3c.krail.option.Option;
 import uk.q3c.krail.option.OptionKeyException;
 import uk.q3c.krail.option.RankOption;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 /**
@@ -28,7 +29,7 @@ import java.util.Optional;
  * <p>
  * Created by David Sowerby on 20/02/15.
  */
-public interface OptionDao {
+public interface OptionDao extends Serializable {
 
     default void checkRankOption(OptionCacheKey<?> cacheKey, RankOption expected) {
         if (cacheKey.getRankOption() != expected) {

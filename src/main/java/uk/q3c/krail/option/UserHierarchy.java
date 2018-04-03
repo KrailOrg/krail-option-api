@@ -15,6 +15,8 @@ package uk.q3c.krail.option;
 
 import com.google.common.collect.ImmutableList;
 
+import java.io.Serializable;
+
 /**
  * There are many reasons for having hierarchies which depend on some aspect of a user's profile.  For example, on
  * their home page, you may wish to present different company information dependent on their location, the job they
@@ -52,7 +54,7 @@ import com.google.common.collect.ImmutableList;
  * <p>
  * Created by David Sowerby on 18/02/15.
  */
-public interface UserHierarchy {
+public interface UserHierarchy extends Serializable {
 
     /**
      * Returns a list of values for the hierarchy ranks, for the current user, for this {@link UserHierarchy}

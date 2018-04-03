@@ -11,7 +11,7 @@
  *
  */
 buildscript {
-    ext.kaytee_plugin_version = "0.18.10.0"
+    ext.kaytee_plugin_version = "0.20.1.0"
     repositories {
         jcenter()
     }
@@ -41,7 +41,7 @@ ext.assertjVersion = '3.8.0'
 
 kaytee {
     version {
-        number = "0.18.0.0"
+        number = "0.18.1.0"
     }
 
     unitTest {
@@ -56,7 +56,7 @@ bintray {
 
 dependencies {
 
-    compile 'uk.q3c.krail:krail-i18n-api:0.15.3.0'
+    compile 'uk.q3c.krail:krail-i18n-api:0.15.6.0'
 
     testCompile 'org.assertj:assertj-core:' + assertjVersion
     testCompile 'junit:junit:4.12'
