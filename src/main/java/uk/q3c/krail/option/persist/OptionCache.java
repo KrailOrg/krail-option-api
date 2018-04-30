@@ -17,7 +17,6 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheStats;
 import uk.q3c.krail.option.Option;
 
-import java.io.Serializable;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentMap;
 
@@ -26,7 +25,7 @@ import java.util.concurrent.ConcurrentMap;
  * <p>
  * Created by David Sowerby on 19/02/15.
  */
-public interface OptionCache extends Serializable {
+public interface OptionCache {
 
     /**
      * Passes the call to the underlying persistence, and if that is successful, writes the entry to the cache
