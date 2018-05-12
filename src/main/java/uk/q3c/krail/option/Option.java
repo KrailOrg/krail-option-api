@@ -15,7 +15,6 @@ package uk.q3c.krail.option;
 
 import uk.q3c.krail.option.persist.OptionCache;
 
-import java.io.Serializable;
 import java.util.Optional;
 
 /**
@@ -27,7 +26,7 @@ import java.util.Optional;
  * <p>
  * Created by David Sowerby on 03/12/14.
  */
-public interface Option extends Serializable {
+public interface Option {
 
 
     //---------------------------------------------- get (highest) ----------------------------------------------------------
