@@ -18,11 +18,12 @@ import com.google.common.collect.ImmutableList;
 import uk.q3c.krail.i18n.I18NKey;
 
 import javax.annotation.concurrent.Immutable;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.google.common.base.Preconditions.*;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Represents the elements which go together to make up a unique {@link Option} key within its context
@@ -30,7 +31,7 @@ import static com.google.common.base.Preconditions.*;
  * Created by David Sowerby on 19/02/15.
  */
 @Immutable
-public class OptionKey<T> {
+public class OptionKey<T> implements Serializable {
 
 
     private final Class<? extends OptionContext> context;

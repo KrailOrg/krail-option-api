@@ -13,6 +13,7 @@
 
 package uk.q3c.krail.option;
 
+import org.apache.commons.lang3.SerializationUtils;
 import org.junit.Test;
 import uk.q3c.krail.i18n.I18NKey;
 import uk.q3c.krail.option.mock.MockOptionContext;
@@ -59,6 +60,20 @@ public class OptionKeyTest {
         OptionKey qualifiedAgain = qualified.qualifiedWith("c", "d");
         //then
         assertThat(qualifiedAgain.compositeKey()).isEqualTo("MockOptionContext-key1-a-b-c-d");
+    }
+
+    @Test
+    public void serializable() {
+        //given
+        OptionKey<Integer> noQualifiers = new OptionKey<>(22, MockOptionContext.class, TestLabelKey.key1);
+        OptionKey qualified = noQualifiers.qualifiedWith("a", "b");
+
+
+        //when
+        OptionKey qualifiedAgain = qualified.qualifiedWith("c", "d");
+        //then
+        assertThat(qualifiedAgain).isEqualTo(SerializationUtils.roundtrip(qualifiedAgain));
+
     }
 
     //@Ignore(value = "Constructor doesn't allow null name key without compile error")

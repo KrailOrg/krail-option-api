@@ -1,6 +1,5 @@
 package uk.q3c.krail.option.mock;
 
-import uk.q3c.krail.i18n.test.MockLabelKey;
 import uk.q3c.krail.option.Option;
 import uk.q3c.krail.option.OptionContext;
 import uk.q3c.krail.option.OptionKey;
